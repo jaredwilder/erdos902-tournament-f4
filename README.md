@@ -1,53 +1,71 @@
-# erdos902-tournament-f4
+# Erdős 902: a candidate improvement for `f(4)`
 
-Work on Erdos problem 902 and the domination number of score-sequence-constrained tournaments,
-including a **candidate improvement to the published lower bound on f(4)**.
+A computational candidate for improving the published lower bound on the tournament function `f(4)`, together with kernel-checked structural lemmas for the surrounding problem.
 
 Author: Jared Wilder. First public timestamp: 2026-09-10.
 
-## The candidate result, stated with its exact status
+## Candidate bound
 
-The published record is **f(4) >= 48**, Reid, McRae, Hedetniemi and Hedetniemi (2004), Corollary 7.
+Reid, McRae, Hedetniemi and Hedetniemi (2004) prove
 
-This repository contains a computational argument for **f(4) >= 49**, together with a second
-candidate: **every hypothetical 49-vertex S4 tournament is 24-regular.**
+```text
+f(4) >= 48.
+```
 
-**Status, precisely:**
+This repository contains a computational argument for
 
-- The argument is **replicated in Python, not sealed in Lean.** Run
-  `speaker-package/verify_real_002.py`. It exits 0, prints `"verdict": "PASS"`, and reports the
-  exact global `ADMISSIBLE_REPAIR_CAPACITY` of **66**, obtained by sweeping all admissible masks
-  per core. Confirmed reproducing 2026-09-10.
-- The counting argument: 24 x 66 = 1584 < 2475, the minimum core need. Margin 891. The
-  indegree-23 branch dies separately because 25 x 66 = 1650 < 2475, and Szekeres gives
-  indegree >= 23, so equality is forced.
-- **McKay and Spence's 37-class completeness is CITED, not re-derived here.** The argument
-  depends on it.
-- A novelty search found no published 49. That is the author's search, not an adjudicated
-  novelty claim. **If this is known, the correct response is an issue on this repository and the
-  claim is withdrawn.**
+```text
+f(4) >= 49,
+```
 
-Because it is not kernel-sealed, treat `f(4) >= 49` as a **candidate**, not a theorem.
+together with a second candidate consequence: every hypothetical 49-vertex `S_4` tournament is 24-regular.
 
-## What IS kernel-verified here
+### Evidence for the candidate
 
-- `kernel/` - F4Seal, F4Rows, F4Catalogue, F4SealPlus, with axiom footprints, shas and
-  verification logs, replicated across two independent Mathlib kernels.
-- `press/f4_bridge.lean` - 7 theorems from S4 and tournament axioms: the covered lemma, a
-  counting corollary, a double count, mass >= 276, deficit <= 12, and the pigeonhole giving
-  an indegree <= 23.
-- `press/m19_kill.lean` - 5 theorems killing the m = 19 branch: McKay's DRT(19) has exactly two
-  rows, one carries S3, bad4 = 1653, admissible capacity 51, and 28 x 51 = 1428 < 1653.
-- `lean-proofs/` - 25 Lean files on Erdos 902, roughly 150 theorems, zero sorries, including
-  f(3) >= 19 tight via Szekeres and the regular-at-bound rigidity result.
+The central finite calculation is independently reproduced by `speaker-package/verify_real_002.py`, which reports the exact global admissible repair capacity **66**.
 
-## The open surface, stated plainly
+The counting step is:
 
-The minimum indegree of a 48-vertex S4 tournament lies in {19, ..., 23}. The m = 19 and m = 23
-branches are killed. **m in {20, 21, 22} remains open and needs a new weapon**: those cores are
-non-extremal so there is no rigidity to exploit, and order 21 cannot be doubly regular at all,
-since DRTs exist only at orders 3 mod 4. The catalogue-and-capacity method jams there by
-construction.
+```text
+24 × 66 = 1584 < 2475,
+```
+
+where 2475 is the minimum core requirement. The indegree-23 case is excluded separately by
+
+```text
+25 × 66 = 1650 < 2475,
+```
+
+and the Szekeres bound supplies the lower indegree constraint.
+
+A load-bearing external dependency remains: completeness of the 37 relevant tournament classes from McKay and Spence is cited rather than independently reconstructed here. For that reason the `f(4) >= 49` statement is presented as a **candidate result**, not as a fully sealed theorem.
+
+A literature search found no published `49` lower bound; historical priority should still be checked independently.
+
+## Kernel-checked mathematics in the repository
+
+The candidate sits inside a larger body of formal work:
+
+- `kernel/` — `F4Seal`, `F4Rows`, `F4Catalogue`, and `F4SealPlus`, with axiom footprints, hashes and verification logs replicated across two Mathlib environments;
+- `press/f4_bridge.lean` — seven theorems from `S_4` and tournament axioms, including the covering lemma, counting corollaries, mass/deficit bounds, and the pigeonhole step producing an indegree at most 23;
+- `press/m19_kill.lean` — five theorems excluding the indegree-19 case via the order-19 doubly regular tournaments and the exact capacity inequality `28 × 51 = 1428 < 1653`;
+- `lean-proofs/` — 25 Lean files, roughly 150 theorems, zero `sorry`, including `f(3) >= 19` and regularity at the relevant extremal boundary.
+
+## Remaining finite cases
+
+For a hypothetical 48-vertex `S_4` tournament, the minimum indegree lies in `{19,20,21,22,23}`.
+
+The current work excludes the endpoint cases `19` and `23`. The middle cases `{20,21,22}` remain the unresolved finite layer for this approach. Their cores are not extremal in the same way, so the rigidity used at the endpoints is unavailable; in particular, order 21 cannot be doubly regular because doubly regular tournaments have order `3 mod 4`.
+
+That identifies the next mathematical task cleanly: replace endpoint rigidity with a structural argument that also controls the three middle indegrees.
+
+## Reproduce the finite calculation
+
+```bash
+python speaker-package/verify_real_002.py
+```
+
+The script should exit successfully and report `ADMISSIBLE_REPAIR_CAPACITY = 66`.
 
 ## License
 
