@@ -1,0 +1,166 @@
+{
+  "S3_survivors": [
+    35,
+    36
+  ],
+  "catalogue_rows": 37,
+  "catalogue_sha256": "20dbad06e128f968e87ce5bec9ca3128b8d2e9a9f25152b29d82c48c967b45d0",
+  "consequences": {
+    "f4_ge_49_given_catalogue_completeness": true,
+    "minimum_core_need": 2475,
+    "order48_total_repair_capacity": 1584,
+    "order49_if_S4": "24-regular",
+    "order49_indeg23_branch": "IMPOSSIBLE",
+    "order49_indeg23_total_repair_capacity": 1650
+  },
+  "cores": {
+    "35": {
+      "admissible_total": 1153310,
+      "bad4": 2475,
+      "global_max_repair": 65,
+      "profile": {
+        "0": {
+          "admissible_count": 1,
+          "count_at_max": 1,
+          "max_repair": 0
+        },
+        "1": {
+          "admissible_count": 23,
+          "count_at_max": 23,
+          "max_repair": 0
+        },
+        "10": {
+          "admissible_count": 48543,
+          "count_at_max": 55,
+          "max_repair": 64
+        },
+        "11": {
+          "admissible_count": 309,
+          "count_at_max": 11,
+          "max_repair": 50
+        },
+        "12": {
+          "admissible_count": 23,
+          "count_at_max": 11,
+          "max_repair": 65
+        },
+        "2": {
+          "admissible_count": 253,
+          "count_at_max": 253,
+          "max_repair": 0
+        },
+        "3": {
+          "admissible_count": 1771,
+          "count_at_max": 1771,
+          "max_repair": 0
+        },
+        "4": {
+          "admissible_count": 8855,
+          "count_at_max": 2475,
+          "max_repair": 1
+        },
+        "5": {
+          "admissible_count": 33649,
+          "count_at_max": 11,
+          "max_repair": 5
+        },
+        "6": {
+          "admissible_count": 100947,
+          "count_at_max": 55,
+          "max_repair": 12
+        },
+        "7": {
+          "admissible_count": 237567,
+          "count_at_max": 88,
+          "max_repair": 20
+        },
+        "8": {
+          "admissible_count": 395439,
+          "count_at_max": 11,
+          "max_repair": 35
+        },
+        "9": {
+          "admissible_count": 325930,
+          "count_at_max": 55,
+          "max_repair": 48
+        }
+      }
+    },
+    "36": {
+      "admissible_total": 1152232,
+      "bad4": 2530,
+      "global_max_repair": 66,
+      "profile": {
+        "0": {
+          "admissible_count": 1,
+          "count_at_max": 1,
+          "max_repair": 0
+        },
+        "1": {
+          "admissible_count": 23,
+          "count_at_max": 23,
+          "max_repair": 0
+        },
+        "10": {
+          "admissible_count": 47564,
+          "count_at_max": 506,
+          "max_repair": 62
+        },
+        "11": {
+          "admissible_count": 276,
+          "count_at_max": 253,
+          "max_repair": 48
+        },
+        "12": {
+          "admissible_count": 23,
+          "count_at_max": 23,
+          "max_repair": 66
+        },
+        "2": {
+          "admissible_count": 253,
+          "count_at_max": 253,
+          "max_repair": 0
+        },
+        "3": {
+          "admissible_count": 1771,
+          "count_at_max": 1771,
+          "max_repair": 0
+        },
+        "4": {
+          "admissible_count": 8855,
+          "count_at_max": 2530,
+          "max_repair": 1
+        },
+        "5": {
+          "admissible_count": 33649,
+          "count_at_max": 759,
+          "max_repair": 4
+        },
+        "6": {
+          "admissible_count": 100947,
+          "count_at_max": 1771,
+          "max_repair": 9
+        },
+        "7": {
+          "admissible_count": 237567,
+          "count_at_max": 253,
+          "max_repair": 18
+        },
+        "8": {
+          "admissible_count": 395439,
+          "count_at_max": 506,
+          "max_repair": 30
+        },
+        "9": {
+          "admissible_count": 325864,
+          "count_at_max": 506,
+          "max_repair": 45
+        }
+      }
+    }
+  },
+  "global_word": {
+    "ADMISSIBLE_REPAIR_CAPACITY": 66
+  },
+  "verdict": "PASS"
+}

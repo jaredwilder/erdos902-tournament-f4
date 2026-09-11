@@ -1,0 +1,99 @@
+{
+  "status": "VERIFIED",
+  "file": "oracle/evidence/erdos902-real-002/kernel/F4Rows.lean",
+  "backend": "windows",
+  "project": "C:\\Users\\jared\\Local Sites\\woocommerce-enterprise\\oracle\\math\\EG411Formal",
+  "needsMathlib": false,
+  "exitCode": 0,
+  "seconds": 112.0,
+  "declarations": [
+    {
+      "declaration": "triples_card",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "quads_card",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row35_tournament",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row36_tournament",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row35_regular11",
+      "clean": true,
+      "axioms": []
+    },
+    {
+      "declaration": "row36_regular11",
+      "clean": true,
+      "axioms": []
+    },
+    {
+      "declaration": "row35_doubly_regular",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row36_doubly_regular",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row35_s3",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row36_s3",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row35_bad4",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "row36_bad4",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "declaration": "bad_floor",
+      "clean": true,
+      "axioms": [
+        "propext"
+      ]
+    }
+  ],
+  "errors": []
+}

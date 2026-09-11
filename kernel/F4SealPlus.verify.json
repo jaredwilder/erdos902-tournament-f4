@@ -1,0 +1,87 @@
+{
+  "status": "UNVERIFIED",
+  "file": "oracle/evidence/erdos902-real-002/kernel/F4Seal.lean",
+  "backend": "wsl",
+  "project": "/root/erdosfire-bench/proofs",
+  "needsMathlib": true,
+  "exitCode": 1,
+  "seconds": 181.3,
+  "declarations": [
+    {
+      "declaration": "mem_badSets",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "bad_covered_outside",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "badCount_le_sum_repair",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "inN_hasS3",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "min_indeg_ge_19",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "out_triples_covered_from_inN",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "card_inN_add_card_outN",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "sum_inN_eq_sum_outN",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "two_mul_sum_indeg",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "exists_indeg_le_23",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "no_order_48_from_global_capacity",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "order49_no_indeg23",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "order49_regular",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "no_S4_tournament_below_49",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "f_four_ge_49",
+      "clean": false,
+      "axioms": []
+    }
+  ],
+  "errors": []
+}

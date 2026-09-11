@@ -1,0 +1,13 @@
+{
+  "pair_slack_global": 588,
+  "triple_slack_global": 7056,
+  "quad_slack_global": 308798,
+  "pair_to_triple_identity": [
+    21168,
+    21168
+  ],
+  "triple_to_quad_identity": [
+    1235192,
+    1235192
+  ]
+}

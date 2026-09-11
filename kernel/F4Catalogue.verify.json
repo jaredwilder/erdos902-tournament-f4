@@ -1,0 +1,37 @@
+{
+  "status": "UNVERIFIED",
+  "file": "oracle/evidence/erdos902-real-002/kernel/F4Catalogue.lean",
+  "backend": "windows",
+  "project": "C:\\Users\\jared\\Local Sites\\woocommerce-enterprise\\oracle\\math\\EG411Formal",
+  "needsMathlib": false,
+  "exitCode": 4294967295,
+  "seconds": 1050.8,
+  "declarations": [
+    {
+      "declaration": "catalogue_length",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "catalogue_all_drt",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "catalogue_s3_rows",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "row35_is_line34",
+      "clean": false,
+      "axioms": []
+    },
+    {
+      "declaration": "row36_is_line35",
+      "clean": false,
+      "axioms": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,52 @@
+/root/peer/in/F4SealPlusAx.lean:157:0: warning: automatically included section variable(s) unused in theorem `Erdos902F4.bad_covered_outside`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/root/peer/in/F4SealPlusAx.lean:234:5: warning: Variable name `hasym` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/root/peer/in/F4SealPlusAx.lean:236:5: warning: Variable name `hq` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/root/peer/in/F4SealPlusAx.lean:274:0: warning: automatically included section variable(s) unused in theorem `Erdos902F4.sum_inN_eq_sum_outN`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/root/peer/in/F4SealPlusAx.lean:304:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/in/F4SealPlusAx.lean:434:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'Erdos902F4.mem_badSets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.bad_covered_outside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.badCount_le_sum_repair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.inN_hasS3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.min_indeg_ge_19' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.out_triples_covered_from_inN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.card_inN_add_card_outN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.sum_inN_eq_sum_outN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.two_mul_sum_indeg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.exists_indeg_le_23' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.no_order_48_from_global_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.order49_no_indeg23' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.order49_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.no_S4_tournament_below_49' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902F4.f_four_ge_49' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT=0

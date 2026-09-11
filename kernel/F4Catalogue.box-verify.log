@@ -1,0 +1,6 @@
+'Erdos902F4Catalogue.catalogue_length' does not depend on any axioms
+'Erdos902F4Catalogue.catalogue_all_drt' depends on axioms: [propext]
+'Erdos902F4Catalogue.catalogue_s3_rows' depends on axioms: [propext]
+'Erdos902F4Catalogue.row35_is_line34' depends on axioms: [propext]
+'Erdos902F4Catalogue.row36_is_line35' depends on axioms: [propext]
+EXIT=0
