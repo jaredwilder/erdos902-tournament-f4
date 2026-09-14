@@ -1,0 +1,52 @@
+catalogue rows: 37 ; all length 253: True
+rows passing DRT(23,11,5) check : 37 / 37
+rows WITH S3 (no certificate)    : [35, 36]
+rows WITHOUT S3 (certificated)   : 35
+
+lexicographically-first nondominated triple per rejected row:
+  R1  : (0, 9, 20)    (11 nondominated triples total)
+  R2  : (2, 5, 20)    (6 nondominated triples total)
+  R3  : (2, 7, 16)    (2 nondominated triples total)
+  R4  : (6, 7, 16)    (2 nondominated triples total)
+  R5  : (1, 4, 21)    (4 nondominated triples total)
+  R6  : (4, 7, 12)    (2 nondominated triples total)
+  R7  : (1, 3, 16)    (4 nondominated triples total)
+  R8  : (1, 4, 22)    (4 nondominated triples total)
+  R9  : (5, 8, 13)    (2 nondominated triples total)
+  R10 : (0, 20, 21)   (5 nondominated triples total)
+  R11 : (0, 13, 19)   (6 nondominated triples total)
+  R12 : (1, 9, 15)    (5 nondominated triples total)
+  R13 : (5, 8, 13)    (2 nondominated triples total)
+  R14 : (0, 12, 16)   (4 nondominated triples total)
+  R15 : (1, 4, 21)    (6 nondominated triples total)
+  R16 : (1, 5, 22)    (4 nondominated triples total)
+  R17 : (1, 4, 21)    (5 nondominated triples total)
+  R18 : (1, 9, 17)    (6 nondominated triples total)
+  R19 : (0, 20, 21)   (6 nondominated triples total)
+  R20 : (1, 4, 21)    (4 nondominated triples total)
+  R21 : (1, 5, 22)    (7 nondominated triples total)
+  R22 : (1, 5, 22)    (4 nondominated triples total)
+  R23 : (6, 7, 17)    (3 nondominated triples total)
+  R24 : (6, 7, 16)    (2 nondominated triples total)
+  R25 : (1, 9, 17)    (2 nondominated triples total)
+  R26 : (1, 4, 22)    (3 nondominated triples total)
+  R27 : (2, 3, 22)    (5 nondominated triples total)
+  R28 : (1, 4, 22)    (2 nondominated triples total)
+  R29 : (5, 7, 13)    (3 nondominated triples total)
+  R30 : (1, 5, 20)    (3 nondominated triples total)
+  R31 : (0, 5, 9)     (3 nondominated triples total)
+  R32 : (0, 5, 9)     (2 nondominated triples total)
+  R33 : (2, 11, 14)   (6 nondominated triples total)
+  R34 : (0, 14, 20)   (4 nondominated triples total)
+  R37 : (1, 10, 14)   (2 nondominated triples total)
+
+cross-check of externally supplied certificates:
+  R1  (0, 9, 20)   -> common in-neighbours = 0  VALID
+  R2  (2, 5, 20)   -> common in-neighbours = 0  VALID
+  R3  (2, 7, 16)   -> common in-neighbours = 0  VALID
+  R37 (1, 10, 14)  -> common in-neighbours = 0  VALID
+
+  R35 : min common in-neighbours over all triples = 1 (must be >=1) -> S3 HOLDS
+  R36 : min common in-neighbours over all triples = 1 (must be >=1) -> S3 HOLDS
+
+WROTE s3_certificates.json (35 certificates)

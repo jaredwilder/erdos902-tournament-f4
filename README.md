@@ -42,6 +42,10 @@ A load-bearing external dependency remains: completeness of the 37 relevant tour
 
 A literature search found no published `49` lower bound; historical priority should still be checked independently.
 
+## The structural proof in Lean
+
+[`structural-proof/`](structural-proof/) has the whole argument as one Lean theorem. It shows that no S4 tournament has 4 to 48 vertices, assuming a single named input about the two surviving DRT(23,11,5) classes. The folder also has the 35 certificates that knock out the other classes.
+
 ## Kernel-checked mathematics in the repository
 
 The candidate sits inside a larger body of formal work:

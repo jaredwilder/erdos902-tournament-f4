@@ -1,0 +1,14 @@
+=== ROW 35 ===
+  (A) 13-subsets violating admissibility: 1144066 / 1144066 -> derived k<=12 CONFIRMED
+  (B) identity  : bad4=2475 admissible_max=65 family=1153310
+      relabel 1 : bad4=2475 admissible_max=65 family=1153310 -> INVARIANT
+      relabel 2 : bad4=2475 admissible_max=65 family=1153310 -> INVARIANT
+      relabel 3 : bad4=2475 admissible_max=65 family=1153310 -> INVARIANT
+  contradiction: 24*65 = 1560 vs badCount 2475 -> HOLDS
+=== ROW 36 ===
+  (A) 13-subsets violating admissibility: 1144066 / 1144066 -> derived k<=12 CONFIRMED
+  (B) identity  : bad4=2530 admissible_max=66 family=1152232
+      relabel 1 : bad4=2530 admissible_max=66 family=1152232 -> INVARIANT
+      relabel 2 : bad4=2530 admissible_max=66 family=1152232 -> INVARIANT
+      relabel 3 : bad4=2530 admissible_max=66 family=1152232 -> INVARIANT
+  contradiction: 24*66 = 1584 vs badCount 2530 -> HOLDS

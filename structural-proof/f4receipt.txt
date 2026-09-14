@@ -1,0 +1,47 @@
+ERDOS 902 / f(4) >= 49  --  BUILD RECEIPT
+date-utc: 2026-08-31T17:54:54Z
+lean: Lean (version 4.31.0-rc1, x86_64-unknown-linux-gnu, commit fd009949156901e6cf15b6d9bf1122294b8e697a, Release)
+toolchain: leanprover/lean4:v4.31.0-rc1
+mathlib-rev: 919544d4309104b3f19724b0e6e48c701d27948f
+
+== FILE HASHES ==
+9e587fc761b548bfdb0bbbbb0378590afdd6706ba3ca3f341de8b7fd9138b63d  F4Struct.lean
+42005006eb92af260a9d3f525362d3e06171a8d4fa3784cafe9ffc9947090c47  F4Reject.lean
+
+== CLEAN BUILD ==
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+F4Struct.lean  wall=3.07s
+F4Struct exit=0
+F4Reject.lean  wall=1.03s
+F4Reject exit=0
+
+== AXIOM FOOTPRINT ==
+'F4.triple_ge_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.pair_ge_eleven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.vertex_ge_23' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.exists_indeg_23_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.core_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.core_doubly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.core_hasS3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.mask_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.bad_covered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.badCount_le_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.badSets_card_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.repairCount_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.admissible_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.hasS3_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4.no_S4_of_card_le_48' depends on axioms: [propext, Classical.choice, Quot.sound]
+'F4Reject.rejects_count' does not depend on any axioms
+'F4Reject.rejects_avoid_survivors' does not depend on any axioms
+'F4Reject.rejects_distinct' does not depend on any axioms
+'F4Reject.all_rejects_valid' depends on axioms: [propext]
+'F4Reject.catalogue_row35' depends on axioms: [propext]
+'F4Reject.catalogue_row36' depends on axioms: [propext]
+'F4Reject.survivor34_s3' depends on axioms: [propext, F4Reject.survivor34_s3._native.native_decide.ax_1_1]
+'F4Reject.survivor35_s3' depends on axioms: [propext, F4Reject.survivor35_s3._native.native_decide.ax_1_1]
+
+== NEGATIVE CONTROLS (each MUST fail) ==
+  F4Neg_badcount -> exit 1 (nonzero required)
+  F4Neg_capacity -> exit 1 (nonzero required)
+  F4Neg_order -> exit 1 (nonzero required)
+  F4Neg (corrupted S3 certificate) -> exit 1 (nonzero required)
