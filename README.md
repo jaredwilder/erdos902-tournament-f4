@@ -1,76 +1,83 @@
-# Erdős 902: a candidate improvement for `f(4)`
+# Erdős #902 — finite structure at `f(4)`
 
-A computational candidate for improving the published lower bound on the tournament function `f(4)`, together with kernel-checked structural lemmas for the surrounding problem.
+A finite/computational program around the lower bound for Schütte's tournament function `f(4)`, together with Lean formalizations of the structural reductions used near the 48-vertex boundary.
 
-Author: Jared Wilder. First public timestamp: 2026-09-10.
+Reid, McRae, Hedetniemi and Hedetniemi proved
 
-## Candidate bound
+\[
+f(4)\ge48.
+\]
 
-Reid, McRae, Hedetniemi and Hedetniemi (2004) prove
+This repository develops a candidate strengthening to
 
-```text
-f(4) >= 48.
-```
+\[
+\boxed{f(4)\ge49}
+\]
 
-This repository contains a computational argument for
+whose remaining external dependency is completeness of the cited McKay–Spence tournament classification used in the final finite reduction.
 
-```text
-f(4) >= 49,
-```
+## Finite capacity calculation
 
-together with a second candidate consequence: every hypothetical 49-vertex `S_4` tournament is 24-regular.
-
-### Evidence for the candidate
-
-The central finite calculation is independently reproduced by `speaker-package/verify_real_002.py`, which reports the exact global admissible repair capacity **66**.
-
-The counting step is:
+The central repair-capacity computation gives
 
 ```text
-24 × 66 = 1584 < 2475,
+ADMISSIBLE_REPAIR_CAPACITY = 66.
 ```
 
-where 2475 is the minimum core requirement. The indegree-23 case is excluded separately by
+The decisive inequalities are
 
-```text
-25 × 66 = 1650 < 2475,
-```
+\[
+24\cdot66=1584<2475
+\]
 
-and the Szekeres bound supplies the lower indegree constraint.
+and
 
-A load-bearing external dependency remains: completeness of the 37 relevant tournament classes from McKay and Spence is cited rather than independently reconstructed here. For that reason the `f(4) >= 49` statement is presented as a **candidate result**, not as a fully sealed theorem.
+\[
+25\cdot66=1650<2475.
+\]
 
-A literature search found no published `49` lower bound; historical priority should still be checked independently.
+The first is the global capacity comparison; the second excludes the indegree-23 endpoint in the relevant reduction.
 
-## The structural proof in Lean
-
-[`structural-proof/`](structural-proof/) has the whole argument as one Lean theorem. It shows that no S4 tournament has 4 to 48 vertices, assuming a single named input about the two surviving DRT(23,11,5) classes. The folder also has the 35 certificates that knock out the other classes.
-
-## Kernel-checked mathematics in the repository
-
-The candidate sits inside a larger body of formal work:
-
-- `kernel/` — `F4Seal`, `F4Rows`, `F4Catalogue`, and `F4SealPlus`, with axiom footprints, hashes and verification logs replicated across two Mathlib environments;
-- `press/f4_bridge.lean` — seven theorems from `S_4` and tournament axioms, including the covering lemma, counting corollaries, mass/deficit bounds, and the pigeonhole step producing an indegree at most 23;
-- `press/m19_kill.lean` — five theorems excluding the indegree-19 case via the order-19 doubly regular tournaments and the exact capacity inequality `28 × 51 = 1428 < 1653`;
-- `lean-proofs/` — 25 Lean files, roughly 150 theorems, zero `sorry`, including `f(3) >= 19` and regularity at the relevant extremal boundary.
-
-## Remaining finite cases
-
-For a hypothetical 48-vertex `S_4` tournament, the minimum indegree lies in `{19,20,21,22,23}`.
-
-The current work excludes the endpoint cases `19` and `23`. The middle cases `{20,21,22}` remain the unresolved finite layer for this approach. Their cores are not extremal in the same way, so the rigidity used at the endpoints is unavailable; in particular, order 21 cannot be doubly regular because doubly regular tournaments have order `3 mod 4`.
-
-That identifies the next mathematical task cleanly: replace endpoint rigidity with a structural argument that also controls the three middle indegrees.
-
-## Reproduce the finite calculation
+Replay:
 
 ```bash
 python speaker-package/verify_real_002.py
 ```
 
-The script should exit successfully and report `ADMISSIBLE_REPAIR_CAPACITY = 66`.
+## Lean structural theorem
 
-## License
+[`structural-proof/`](structural-proof/) packages the 4–48-vertex exclusion as one Lean theorem conditional on a single named input about the two surviving `DRT(23,11,5)` classes.
 
-Apache-2.0.
+The same folder contains 35 finite certificates eliminating the other classes used by the reduction.
+
+## Formalized surrounding structure
+
+The repository also contains:
+
+- `kernel/` — `F4Seal`, `F4Rows`, `F4Catalogue`, and `F4SealPlus`, with hashes and axiom reports;
+- `press/f4_bridge.lean` — covering, mass/deficit, and pigeonhole lemmas reducing to indegree at most 23;
+- `press/m19_kill.lean` — exclusion of the indegree-19 case using order-19 doubly regular tournaments and
+
+  \[
+  28\cdot51=1428<1653;
+  \]
+
+- `lean-proofs/` — 25 Lean files with roughly 150 theorems and no `sorry`, including `f(3)>=19` and regularity statements at the finite boundary.
+
+## Remaining middle indegrees
+
+For a hypothetical 48-vertex `S_4` tournament, the minimum indegree lies in
+
+\[
+\{19,20,21,22,23\}.
+\]
+
+The endpoint cases 19 and 23 are eliminated by the current structure. The middle cases `20,21,22` are the remaining finite layer for the same approach; they lack the endpoint rigidity used in the current proofs.
+
+## Relation to the main #902 repository
+
+The broader theorem package—classical asymptotic bounds, exact `f(1),f(2)`, QR67, DRT23 structure, dominator cubes, and other reductions—is collected in [`erdos902`](https://github.com/jaredwilder/erdos902).
+
+The candidate `f(4)>=49` statement in this repository should be read with the stated catalogue-completeness dependency; the finite capacity calculations and Lean lemmas are independently checkable at their displayed scopes.
+
+Author: Jared Wilder. License: Apache-2.0.
