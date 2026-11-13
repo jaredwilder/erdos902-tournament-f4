@@ -36,3 +36,8 @@ jobs:
           cd independent-review-20261113
           g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_reverse_paley49.cpp -o /tmp/f4-reverse49
           /tmp/f4-reverse49 drtourn23.txt
+      - name: All Paley degree12 additions, 276-case 12-orbit court
+        run: |
+          cd independent-review-20261113
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_paley_degree12.cpp -o /tmp/f4-paley-all12
+          /tmp/f4-paley-all12 drtourn23.txt
