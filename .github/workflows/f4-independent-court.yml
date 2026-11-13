@@ -1,0 +1,26 @@
+name: f4 independent finite and uniform courts
+on:
+  pull_request:
+    paths:
+      - "independent-review-20261113/**"
+      - ".github/workflows/f4-independent-court.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-f4-court:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently verify 37-class data and Paley67
+        run: python independent-review-20261113/verify_all.py
+      - name: Universal quadratic rigidity, all-class 85 capacity, and explicit witness
+        run: |
+          cd independent-review-20261113
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic uniform_f4.cpp -o /tmp/uniform_f4
+          /tmp/uniform_f4 drtourn23.txt
+          python verify_general_rigidity.py
+          python check_extremal_witness.py
