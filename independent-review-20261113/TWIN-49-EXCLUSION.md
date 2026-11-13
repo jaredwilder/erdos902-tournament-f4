@@ -109,3 +109,28 @@ This calculation is repeated independently for **each of the 23 pivot vertices**
     /tmp/verify_reverse_paley49 drtourn23.txt
 
 Expect CLASS36_REVERSED_CLONES_EXCLUDED=23 and ALL_PALLEY_REVERSED_DRT23_49_COURTS=PASS. Full public CI runs all three new courts. No general f(4)>=50 claim.
+
+
+## Third extension: ALL 276 internal-indegree-12 additions to the Paley23 core
+
+The reversed Paley clone is just one of the possible ways to add a vertex w with twelve in-neighbors in the Paley DRT23 core U. The S4 triple condition forces |I_U(w) intersect I_U(h)|>=5 for every h in U. A new independent 2^23-bitmask exhaustive computation finds **exactly 276** twelve-subsets satisfying these constraints and every one has the form
+
+    I_U(w) = I_U(a) union {b},   where b is one of the 12 vertices not in I_U(a).
+
+There are 23 choices of a and 12 of b; every valid 12-subset contains **one and only one** full principal neighborhood I_U(a).
+
+An explicit permutation recorded and independently verified in verify_paley_degree12.cpp identifies catalogue row36 with the quadratic-residue tournament on Z/23Z. Translation x->x+c is an automorphism, so all 276 additions reduce to **12 representatives** with a fixed pivot a=0, one for each choice of b outside I_U(0). This is a mathematically certified symmetry reduction, not an unchecked sampling assumption.
+
+**Eleven shifted cases:** for b in O_U(0), w beats O_U(0) minus {b} together with {0} (11 vertices). T49 regularity forces twelve uniform and twelve hybrid external vertices. The independent finite court subtracts the 48 previously repaired quadruples, then proves
+
+    new repairs <= 12*66 + 12*140 = 2472
+    still required = 2530 - 48 = 2482
+    strict gap = 10.
+
+All eleven representatives give the same exact positive gap10, excluding **11*23=253** distinct placements.
+
+**One reverse-clone case:** when b=0, w beats O_U(0) (11 vertices) and itself repairs zero internal bad four-sets. The 12 hybrid vertices must all have capacity >=132 to fit the 14 total slack, but only 11 distinct hybrid masks qualify. That excludes the remaining **23** translated placements, as separately checked for each pivot in verify_reverse_paley49.cpp.
+
+**Result:** 276/276 Paley23 degree12 extensions excluded. Together with the 23 Paley degree11 extensions and 23 row35 degree11 extensions proved above, this is **322 distinct structural placements excluded**. They are not 322 nonisomorphic 49-vertex tournaments, and f(4)>=50 is **not** claimed.
+
+The exact new certificate is verify_paley_degree12.cpp, independently reproduced under the public GitHub Actions Linux workflow. It checks every one of the 1,352,078 possible twelve-subsets, the explicit isomorphism, all twelve orbit representatives, and the scarcity proof. No model, GPU or external runtime required.
