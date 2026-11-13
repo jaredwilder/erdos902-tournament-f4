@@ -87,16 +87,20 @@ int main(int argc,char**argv){
   string s;vector<Core> all;
   while(getline(f,s))if(!s.empty())all.emplace_back(s);
   if(all.size()!=37)throw runtime_error("expected 37 rows");
-  int maxcap=0,minbad=100000;
+  int maxcap=0,minbad=100000,maxcap12=0;
   for(int i=0;i<37;i++){
    auto r=court(all[i],i+1);
-   maxcap=max(maxcap,r.cap);minbad=min(minbad,r.bad);
+   maxcap=max(maxcap,r.cap);minbad=min(minbad,r.bad);maxcap12=max(maxcap12,r.cap12);
   }
-  if(maxcap!=85 || minbad!=2475)throw runtime_error("frozen snapshot regression");
+  if(maxcap!=85 || maxcap12!=69 || minbad!=2475)throw runtime_error("frozen snapshot regression");
   cout<<"UNIVERSAL_BAD_LOWER=2109\n"
       <<"ALL_37_CAP_UPPER="<<maxcap<<"\n"
       <<"OUTSIDE_24_MAX_REPAIR="<<24*maxcap<<"\n"
       <<"CLASSIFICATION_UNIFORM_GAP="<<2109-24*maxcap<<"\n"
+      <<"ALL_37_CAP_12_UPPER="<<maxcap12<<"\n"
+      <<"MINIMUM_FULL_12_MASKS_IN_ORDER48=12\n"
+      <<"DEGREE_BUDGET_MAX_REPAIRS="<<12*maxcap+12*maxcap12<<"\n"
+      <<"DEGREE_BUDGET_GAP="<<2109-(12*maxcap+12*maxcap12)<<"\n"
       <<"THEOREM_CONDITIONAL_ON_PUBLISHED_37_CLASS_COUNT=PASS\n";
   return 0;
  }catch(const exception&e){cerr<<"FAIL "<<e.what()<<"\n";return 2;}
