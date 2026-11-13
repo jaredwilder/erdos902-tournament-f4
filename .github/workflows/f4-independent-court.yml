@@ -31,3 +31,8 @@ jobs:
           /tmp/f4-rigidity drtourn23.txt
           g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_clone49.cpp -o /tmp/f4-clone49
           /tmp/f4-clone49 drtourn23.txt
+      - name: Reverse Paley-type clones, high-mask scarcity court (23 pivots)
+        run: |
+          cd independent-review-20261113
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_reverse_paley49.cpp -o /tmp/f4-reverse49
+          /tmp/f4-reverse49 drtourn23.txt
