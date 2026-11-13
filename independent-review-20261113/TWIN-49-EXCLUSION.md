@@ -85,3 +85,27 @@ Expected concluding lines:
     NO_49_S4_TOURNAMENT_WITH_DRT23_CLONED_INNEIGHBORHOOD=PASS
 
 The catalogue input is the same 37-row data independently distinguished by the prior six-/eight-subtournament fingerprint court; frozen SHA-256: 20dbad06e128f968e87ce5bec9ca3128b8d2e9a9f25152b29d82c48c967b45d0. A mutated catalogue bit must be rejected by the DRT parameter checks. No model, frontier inference, GPU or network is involved in the mathematical finite verification.
+
+
+## Second extension: reverse-oriented clones of the Paley/row36 DRT core (23 more cases)
+
+The previous 46-case theorem uses w beating its cloned vertex a, with I_U(w)=I_U(a). We can also duplicate a with the *opposite* edge a beats w. In this orientation I_U(w)=I_U(a) union {a} (size12) and O_U(w)=O_U(a) (size11). The 24-vertex H=U union {w} has S3: for any triple containing w and two vertices b,c, a vertex dominating (a,b,c) in the S3 core U also beats w.
+
+In any **regular 49-vertex S4** extension, w beats v, 11 vertices of U, and therefore exactly **12** of the 24 vertices X=O_T(v). Thus X contains twelve hybrid-mask vertices (w beats x) and twelve uniform-mask vertices (x beats w).
+
+Row36 (the Paley-type DRT23) has **2,530** internally undominated four-sets. The reverse clone w beats only O_U(a), and a already beats all those vertices, so w repairs **zero** bad four-sets. The finite mask court gives at most **66** repairs per uniform mask and **146** per hybrid mask. The naive total capacity is
+
+    12*66 + 12*146 = 2544,
+
+only 14 greater than 2530. Thus every hybrid mask must repair at least 132: a hybrid repairing 131 or fewer would lose at least 15 from the total and contradict coverage, even with all other masks at maximum and zero overlaps.
+
+**Pigeonhole certificate:** the complete 2^23-bitmask exhaustion in verify_reverse_paley49.cpp finds **exactly 11 distinct hybrid admissible masks with repair count >=132**, and each of these eleven actually repairs 146 four-sets. Yet the 49-vertex tournament would require *twelve* such hybrid external vertices. Two must use the same mask, duplicating all 146 of its repaired four-sets. The available overlap slack is only 14. Contradiction.
+
+This calculation is repeated independently for **each of the 23 pivot vertices** in the frozen class36 representative; no transitivity argument is assumed. All 23 cases pass. The new combined exclusion is **46 forward-oriented DRT clone cases plus 23 reversed Paley-class clone cases = 69 distinct checked structural placements**, not 69 isomorphism classes and not an exclusion of all possible 49-vertex S4 tournaments.
+
+**Run:**
+
+    g++ -std=c++17 -O3 verify_reverse_paley49.cpp -o /tmp/verify_reverse_paley49
+    /tmp/verify_reverse_paley49 drtourn23.txt
+
+Expect CLASS36_REVERSED_CLONES_EXCLUDED=23 and ALL_PALLEY_REVERSED_DRT23_49_COURTS=PASS. Full public CI runs all three new courts. No general f(4)>=50 claim.
