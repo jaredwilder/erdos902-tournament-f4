@@ -1,0 +1,43 @@
+name: f4 independent finite and uniform courts
+on:
+  pull_request:
+    paths:
+      - "independent-review-20261113/**"
+      - ".github/workflows/f4-independent-court.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-f4-court:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently verify 37-class data and Paley67
+        run: python independent-review-20261113/verify_all.py
+      - name: Universal quadratic rigidity, all-class 85 capacity, and explicit witness
+        run: |
+          cd independent-review-20261113
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic uniform_f4.cpp -o /tmp/uniform_f4
+          /tmp/uniform_f4 drtourn23.txt
+          python verify_general_rigidity.py
+          python check_extremal_witness.py
+      - name: New universal DRT rigidity and 49-vertex clone exclusion (46 cases)
+        run: |
+          cd independent-review-20261113
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_drt_rigidity.cpp -o /tmp/f4-rigidity
+          /tmp/f4-rigidity drtourn23.txt
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_clone49.cpp -o /tmp/f4-clone49
+          /tmp/f4-clone49 drtourn23.txt
+      - name: Reverse Paley-type clones, high-mask scarcity court (23 pivots)
+        run: |
+          cd independent-review-20261113
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_reverse_paley49.cpp -o /tmp/f4-reverse49
+          /tmp/f4-reverse49 drtourn23.txt
+      - name: All Paley degree12 additions, 276-case 12-orbit court
+        run: |
+          cd independent-review-20261113
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_paley_degree12.cpp -o /tmp/f4-paley-all12
+          /tmp/f4-paley-all12 drtourn23.txt
