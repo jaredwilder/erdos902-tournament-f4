@@ -41,6 +41,22 @@ The original structural argument in F4Struct.lean proves that an S4 tournament o
 
 This proof no longer needs to identify the two S3 classes, nor their precise 2475/2530 bad-four-set counts. The remaining finite proof is one uniform 85 capacity bound.
 
+## Degree-budget strengthening: 261-set contradiction
+
+The first contradiction used the global bound 85 for all 24 outside masks. However the full 48-vertex structure forces at least twelve of those masks to have the *maximal* size 12, and the independent finite court gives a smaller bound of **69** repairs for such a mask.
+
+Every h inside the 23-vertex core H has at least 23 incoming edges in the full tournament (the existing Lean structural degree lemma), exactly 11 incoming from H, and no incoming from distinguished vertex v (since h beats v). So at least 12 of the 24 outside vertices beat h. Double counting edges X -> H gives
+
+    sum_(x in X) |W_x| >= 23*12 = 276.
+
+Every outside mask W_x satisfies |W_x|<=12 by the general rigidity identity. If k masks have size 12 then total size <=12*k+11*(24-k)=264+k; so k>=12.
+
+The exhaustive independent all-37-class checker verifies not only cap<=85 over all admissible masks, but **cap<=69 over all admissible size-12 masks**. Hence at most twelve smaller masks contribute <=85 apiece, while at least twelve full masks contribute <=69 apiece:
+
+    total repairs <= 12*85 + 12*69 = 1848 < 2109 guaranteed bad four-sets.
+
+**Gap = 261**; the original uniform contradiction had gap 69. This uses the same published 37-class classification, the same finite court, and an already proved structural minimum-degree inequality. It is a stronger proof margin, not a new record beyond f(4)>=49. The executable uniform_f4.cpp now asserts exact all-class max cap12=69 and prints DEGREE_BUDGET_GAP=261.
+
 **Further restriction at n=49:** If an S4 tournament of order 49 has a vertex of indegree23, the same analysis gives 25 outside vertices. The separate catalogue-wide exact minimum of 2475 bad sets and maximum cap85 gives 25*85=2125<2475, contradiction. All indegrees must then be at least24; their average is24, so **any S4 tournament on 49 vertices must be 24-regular**. This does NOT prove f(4)>=50.
 
 ## How to replay
